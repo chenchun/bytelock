@@ -14,12 +14,17 @@ var (
 )
 
 func NewKeylock() *Keylock {
-	return &Keylock{locks: make([]uint32, MIB2), keyGen: Crc32Mod}
+	return &Keylock{locks: make([]uint32, MIB2), keyGen: Crc32Mod, sleepTime: sleepTime}
+}
+
+func New(len uint64, keyGen KeyGen, sleepTime time.Duration) *Keylock {
+	return &Keylock{locks: make([]uint32, len), keyGen: keyGen, sleepTime: sleepTime}
 }
 
 type Keylock struct {
-	locks  []uint32
-	keyGen KeyGen
+	locks     []uint32
+	keyGen    KeyGen
+	sleepTime time.Duration
 }
 
 func (l *Keylock) Lock(key []byte) {
