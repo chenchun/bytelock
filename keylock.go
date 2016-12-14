@@ -6,9 +6,9 @@ import (
 )
 
 var (
-	KIB31 = 8191     //takes 31KIB memory
-	KIB511 = 131071  //takes 511KIB memory
-    MIB2 = 524287    //takes 2MIB memory
+	KIB31  = 8191   //takes 31KIB memory
+	KIB511 = 131071 //takes 511KIB memory
+	MIB2   = 524287 //takes 2MIB memory
 
 	sleepTime = 10 * time.Millisecond
 )

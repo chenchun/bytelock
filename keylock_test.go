@@ -26,7 +26,7 @@ func TestLockUnLock(t *testing.T) {
 func TestUnLockUnlock(t *testing.T) {
 	l := NewKeylock()
 	key := []byte("pod1-22-31")
-	assertPanic(t, func() {l.Unlock(key)})
+	assertPanic(t, func() { l.Unlock(key) })
 }
 
 func assertPanic(t *testing.T, f func()) {
